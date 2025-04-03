@@ -1,0 +1,163 @@
+/**
+ * Flag Icons CSS
+ * Simplified version of flag-icon-css library for Real vs AI game
+ */
+
+.flag-icon {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  line-height: 1em;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  border-radius: 2px;
+}
+
+.flag-icon:before {
+  content: "\00a0";
+}
+
+.flag-icon-sm {
+  width: 1em;
+  height: 1em;
+}
+
+.flag-icon-md {
+  width: 1.33em;
+  height: 1.33em;
+}
+
+.flag-icon-lg {
+  width: 2em;
+  height: 2em;
+}
+
+/* Country Flag URLs */
+.flag-icon-us {
+  background-image: url(/static/images/flags/us.svg);
+}
+
+.flag-icon-gb {
+  background-image: url(/static/images/flags/gb.svg);
+}
+
+.flag-icon-ca {
+  background-image: url(/static/images/flags/ca.svg);
+}
+
+.flag-icon-au {
+  background-image: url(/static/images/flags/au.svg);
+}
+
+.flag-icon-fr {
+  background-image: url(/static/images/flags/fr.svg);
+}
+
+.flag-icon-de {
+  background-image: url(/static/images/flags/de.svg);
+}
+
+.flag-icon-it {
+  background-image: url(/static/images/flags/it.svg);
+}
+
+.flag-icon-es {
+  background-image: url(/static/images/flags/es.svg);
+}
+
+.flag-icon-jp {
+  background-image: url(/static/images/flags/jp.svg);
+}
+
+.flag-icon-cn {
+  background-image: url(/static/images/flags/cn.svg);
+}
+
+.flag-icon-br {
+  background-image: url(/static/images/flags/br.svg);
+}
+
+.flag-icon-in {
+  background-image: url(/static/images/flags/in.svg);
+}
+
+.flag-icon-ru {
+  background-image: url(/static/images/flags/ru.svg);
+}
+
+.flag-icon-za {
+  background-image: url(/static/images/flags/za.svg);
+}
+
+.flag-icon-mx {
+  background-image: url(/static/images/flags/mx.svg);
+}
+
+.flag-icon-ar {
+  background-image: url(/static/images/flags/ar.svg);
+}
+
+.flag-icon-nl {
+  background-image: url(/static/images/flags/nl.svg);
+}
+
+.flag-icon-se {
+  background-image: url(/static/images/flags/se.svg);
+}
+
+.flag-icon-no {
+  background-image: url(/static/images/flags/no.svg);
+}
+
+.flag-icon-dk {
+  background-image: url(/static/images/flags/dk.svg);
+}
+
+.flag-icon-fi {
+  background-image: url(/static/images/flags/fi.svg);
+}
+
+.flag-icon-pl {
+  background-image: url(/static/images/flags/pl.svg);
+}
+
+.flag-icon-pt {
+  background-image: url(/static/images/flags/pt.svg);
+}
+
+.flag-icon-gr {
+  background-image: url(/static/images/flags/gr.svg);
+}
+
+.flag-icon-ie {
+  background-image: url(/static/images/flags/ie.svg);
+}
+
+.flag-icon-nz {
+  background-image: url(/static/images/flags/nz.svg);
+}
+
+.flag-icon-sg {
+  background-image: url(/static/images/flags/sg.svg);
+}
+
+.flag-icon-ae {
+  background-image: url(/static/images/flags/ae.svg);
+}
+
+.flag-icon-kr {
+  background-image: url(/static/images/flags/kr.svg);
+}
+
+.flag-icon-be {
+  background-image: url(/static/images/flags/be.svg);
+}
+
+.flag-icon-ch {
+  background-image: url(/static/images/flags/ch.svg);
+}
+
+.flag-icon-at {
+  background-image: url(/static/images/flags/at.svg);
+}
