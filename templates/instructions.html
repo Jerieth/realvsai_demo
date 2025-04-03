@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block title %}Game Instructions{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">How to Play Real vs AI</h2>
+                </div>
+                <div class="card-body">
+                    <h3 class="mb-4">Game Overview</h3>
+                    <p class="lead">
+                        Real vs AI is an image-identification game that challenges your ability to distinguish between authentic photographs and AI-generated images.
+                    </p>
+                    
+                    <div class="alert alert-info">
+                        <h4><i class="fas fa-info-circle me-2"></i> What are AI-generated images?</h4>
+                        <p>
+                            AI-generated images are either completely AI-generated or AI-assisted composite images/photo composites using AI. These images are created using AI models that analyze and manipulate elements from real photographs, combining them into a new visual design.
+                        </p>
+                        <p>
+                            These can involve processes like image stitching, where AI blends parts of various photos together seamlessly. Some AI tools use techniques like style transfer, which overlay artistic elements onto a base image, or image inpainting, which fills in missing parts of photos creatively.
+                        </p>
+                        <p>
+                            Such creations retain elements of realism due to the use of real photos but are often modified or augmented to suit specific creative purposes.
+                        </p>
+                    </div>
+                    
+                    <h3 class="mt-5 mb-3">Game Modes</h3>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h4 class="mb-0">Single Player Mode</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to Play</h5>
+                            <p>In Single Player mode, you'll be shown two images side by side - one real and one AI-generated. Your task is to identify which image is the real one.</p>
+                            
+                            <h5>Difficulty Levels</h5>
+                            <ul>
+                                <li><strong>Easy:</strong> 20 rounds with 5 lives</li>
+                                <li><strong>Medium:</strong> 50 rounds with 3 lives</li>
+                                <li><strong>Hard:</strong> 100 rounds with only 1 life</li>
+                            </ul>
+                            
+                            <h5>Scoring</h5>
+                            <p>Each correct answer adds 1 point to your score. Each incorrect answer costs you 1 life. The game ends when you run out of lives or complete all rounds.</p>
+                            
+                            <h5>Bonus Game</h5>
+                            <p>In Easy and Medium difficulties, every 10 turns you'll have the option to play a bonus mini-game if you have less than the starting number of lives. The bonus game shows you four images, one of which is real. If you correctly identify it, you gain a life. If you're wrong, you lose half your score (rounded up). You can always choose to skip the bonus game if you prefer.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h4 class="mb-0">Play with Friends (Multiplayer)</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to Play</h5>
+                            <p>In Multiplayer mode, you compete with friends to see who has the best eye for real vs AI images. The game starts once at least two players have joined.</p>
+                            
+                            <h5>Joining a Game</h5>
+                            <ol>
+                                <li>One player creates a game and receives a session ID</li>
+                                <li>Other players use that session ID to join the same game</li>
+                                <li>Up to 4 players can join a single game</li>
+                            </ol>
+                            
+                            <h5>Gameplay</h5>
+                            <p>All players see the same images for 10 rounds. Each player makes their own selection independently. The player with the most correct answers at the end wins!</p>
+                            
+                            <h5>Notes</h5>
+                            <p>Players can join a game that's already in progress. If players leave and only one remains, the game will continue.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header bg-warning text-white">
+                            <h4 class="mb-0">Endless Mode</h4>
+                        </div>
+                        <div class="card-body">
+                            <h5>How to Play</h5>
+                            <p>Endless Mode is for those who want a true challenge. Keep playing as long as you can maintain your lives!</p>
+                            
+                            <h5>Setup</h5>
+                            <p>You start with 3 lives and can play indefinitely until you run out of lives.</p>
+                            
+                            <h5>Scoring</h5>
+                            <p>Your score is the total number of correct answers. High scores in Endless Mode are tracked on a separate leaderboard.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="mt-5 mb-3">Achievements</h3>
+                    <p>As you play, you can earn various achievements and badges that will be displayed on your profile:</p>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-medal fa-2x text-success mb-3"></i>
+                                    <h5>Gameplay Achievements</h5>
+                                    <p class="small">Earn these by completing games at different difficulty levels</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-star fa-2x text-warning mb-3"></i>
+                                    <h5>Score Achievements</h5>
+                                    <p class="small">Reach impressive score milestones across any game mode</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-users fa-2x text-info mb-3"></i>
+                                    <h5>Social Achievements</h5>
+                                    <p class="small">Win multiplayer games against friends</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="mt-5 mb-3">Tips for Success</h3>
+                    <ul>
+                        <li>Look closely at fine details like hair, teeth, and fingers - AI often struggles with these</li>
+                        <li>Check for unnatural lighting or shadows that seem off</li>
+                        <li>Examine textures and patterns for inconsistencies</li>
+                        <li>Look for unusual distortions or warping in the background</li>
+                        <li>Trust your instincts - if something looks "off" about an image, it might be AI-generated</li>
+                    </ul>
+                    
+                    <div class="text-center mt-5">
+                        <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-play-circle me-2"></i> Start Playing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

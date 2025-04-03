@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Game Over - Real Vs AI{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="game-result">
+            <h1 class="text-danger">Game Over!</h1>
+            
+            <p class="lead">Sorry, you've run out of lives.</p>
+            
+            <div class="final-score">
+                {{ game.score }}
+            </div>
+            <p>Your final score</p>
+            
+            <!-- Share score options -->
+            <div class="share-score mt-3 mb-4">
+                <h4>Share Your Score</h4>
+                <div class="d-flex justify-content-center gap-3 mt-3">
+                    <a href="mailto:?subject=My%20score%20in%20Real%20vs%20AI%20game&body=I%20just%20scored%20{{ game.score }}%20points%20in%20the%20Real%20vs%20AI%20image%20game!%20Can%20you%20beat%20my%20score?%20Play%20at%20{{ request.host_url }}" class="btn btn-outline-primary">
+                        <i class="fas fa-envelope"></i> Email
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.host_url }}&quote=I%20just%20scored%20{{ game.score }}%20points%20in%20the%20Real%20vs%20AI%20image%20game!%20Can%20you%20beat%20my%20score?" target="_blank" class="btn btn-outline-primary">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=I%20just%20scored%20{{ game.score }}%20points%20in%20the%20Real%20vs%20AI%20image%20game!%20Can%20you%20beat%20my%20score?&url={{ request.host_url }}" target="_blank" class="btn btn-outline-primary">
+                        <i class="fab fa-twitter"></i> Twitter
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Submit score form -->
+            {% if game.game_mode == 'endless' or (game.game_mode == 'single' and game.score > 0) %}
+                <div class="card bg-dark mt-4 mb-4">
+                    <div class="card-body">
+                        <h4 class="mb-3">Submit Your Score</h4>
+                        
+                        <div id="validationError" class="alert alert-danger" style="display: none;"></div>
+                        
+                        <form id="scoreForm" action="{{ url_for('submit_score') }}" method="post">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="initials" class="form-label">Your Initials (max 3)</label>
+                                    <input type="text" class="form-control" id="initials" name="initials" maxlength="3" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email (Optional)</label>
+                                    <input type="email" class="form-control" id="email" name="email">
+                                </div>
+                            </div>
+                            
+                            <div class="d-grid gap-2 mt-3">
+                                <button type="submit" class="btn btn-primary">Submit Score</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
+            
+            <div class="d-grid gap-2 mt-4">
+                <a href="{{ url_for('index') }}" class="btn btn-lg btn-outline-light">Back to Home</a>
+                <a href="{{ url_for('leaderboard') }}" class="btn btn-lg btn-outline-warning">View Leaderboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/confetti.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/validation.js') }}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize JSConfetti with error handling
+        let jsConfetti;
+        try {
+            jsConfetti = new JSConfetti();
+            
+            // Trigger a smaller confetti celebration for game over
+            // Since it's game over, we'll use a more subdued effect
+            jsConfetti.addConfetti({
+                confettiColors: [
+                    '#26ccff', '#a25afd', '#ff5e7e', '#88ff5a'
+                ],
+                confettiNumber: 50, // Smaller number for game over
+            });
+        } catch (error) {
+            console.warn('JSConfetti initialization failed:', error);
+        }
+    });
+</script>
+{% endblock %}
